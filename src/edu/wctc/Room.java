@@ -2,7 +2,9 @@ package edu.wctc;
 
 import java.util.ArrayList;
 
-public class Room {
+public class Room{
+    static int roomCount;
+    int roomNum;
 
     private ArrayList<Wall> wallList;
 
