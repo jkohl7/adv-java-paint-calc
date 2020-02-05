@@ -8,7 +8,11 @@ public class Room{
 
     private ArrayList<Wall> wallList;
 
+
+
     public Room(double length, double width, double height) throws BadWidthException, BadHeightException {
+
+
         wallList = new ArrayList<Wall>();
 
         Wall wallA = new Wall(length, height);
@@ -23,6 +27,8 @@ public class Room{
 
     public double getArea() {
         double area = 0;
+        roomNum = roomCount;
+        roomCount++;
 
         for (int i = 0; i < wallList.size(); i++) {
             Wall w = wallList.get(i);
