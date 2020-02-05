@@ -1,10 +1,11 @@
 package edu.wctc;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Room{
+public class Room implements Serializable {
     static int roomCount;
-    int roomNum;
+    int roomNum = 1;
 
     private ArrayList<Wall> wallList;
 
@@ -36,5 +37,7 @@ public class Room{
         }
 
         return area;
+    }
+    public String toString() {return "A room has a total area of " + getArea() + " cubic units.";
     }
 }

@@ -1,5 +1,6 @@
 package edu.wctc;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -29,10 +30,22 @@ public class PaintCalculator {
                         createRoom();
                         break;
                     case 2:
-                        // writeFile();
+                        RoomWriter rw = new RoomWriter();
+                        try{
+                            rw.writeRoomFile("rooms.dat",roomList);
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
                         break;
                     case 3:
-                        // readFile();
+                        RoomReader rr = new RoomReader();
+                        try{
+                            roomList = rr.readRoomFile("rooms.dat");
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        } catch (ClassNotFoundException e) {
+                            e.printStackTrace();
+                        }
                         break;
                     case 4:
                         printRooms();
